@@ -1,6 +1,6 @@
 import pandas as pd
 
-books = pd.read_csv('goodreads_books.csv', on_bad_lines='skip')
+books = pd.read_csv('data/goodreads_books.csv', on_bad_lines='skip')
 books.columns = [col.strip() for col in books.columns]
 
 # Drop ID-like and non-numeric fields
@@ -27,7 +27,5 @@ corr_pairs = corr_pairs.reindex(corr_pairs.Correlation.abs().sort_values(ascendi
 top_corr = corr_pairs.drop_duplicates(subset=['Correlation'])
 
 top_corr = corr_pairs.head(10)
-print("Top Useful Correlations:\n")
-print(top_corr.to_string(index=False))
 
-corr_pairs.to_csv("top_correlations.csv", index=False)
+corr_pairs.to_csv("outputs/top_correlations.csv", index=False)

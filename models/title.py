@@ -5,7 +5,7 @@ from difflib import get_close_matches
 
 # Step 1 - Load data
 
-books = pd.read_csv('goodreads_books.csv', on_bad_lines='skip')
+books = pd.read_csv('data/goodreads_books.csv', on_bad_lines='skip')
 
 # Step 2 - Data Preprocessing
 
@@ -46,5 +46,7 @@ def get_recommendations(title, cosine_sim=cosine_sim):
     return books['title'].iloc[book_indices].tolist()
 
 recs = get_recommendations('great expectations')
-for i, rec in enumerate(recs, 1):
-    print(f"{i}. {rec}")
+
+with open('outputs/title.txt', 'w') as f:
+    for i, rec in enumerate(recs, 1):
+        f.write(f"{i}. {rec}\n")
