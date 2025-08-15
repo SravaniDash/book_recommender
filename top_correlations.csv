@@ -1,0 +1,7 @@
+Feature 1,Feature 2,Correlation
+ratings_count,text_reviews_count,0.865977439453674
+average_rating,num_pages,0.15047661307500726
+average_rating,ratings_count,0.03822359181100936
+num_pages,text_reviews_count,0.03697651308319013
+num_pages,ratings_count,0.034337234654482206
+average_rating,text_reviews_count,0.0336629331044078
